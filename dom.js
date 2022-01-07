@@ -1,3 +1,8 @@
+// import {runEvent} from './modules/runEvent'
+// import addItem from './modules/addItem'
+// import removeItem from './modules/removeItem'
+// import filterItems from './modules/filterItems'
+
 var button = document.getElementById('button')
 var box = document.getElementById('box')
 // var output = document.getElementById('output')
@@ -37,7 +42,7 @@ function runEvent(e){
     //document.getElementById('output').innerHTML =
     //'<h3>'+e.target.value+'</h3>' 
 
-    document.body.style.backgroundColor = 'rgb('+e.offsetX+', '+e.offsetY+', 230)'
+    document.body.style.backgroundColor = 'rgb('+e.offsetX+', '+e.offsetY+', 0)'
     //document.getElementById('main').style.backgroundColor = 'rgb('+e.offsetY+', '+e.offsetX+',  40)'
     output.innerHTML =  '<h3>MouseX(red):  '+e.offsetX+'</h3><h3>MouseY(green): ' +e.offsetY+'</h3>'
 
@@ -68,7 +73,8 @@ filter.addEventListener('keyup', filterItems)
     function addItem(e) {
         e.preventDefault()
         //get input value
-        var newItem = document.getElementById('item').value
+        var inputField = document.getElementById('item')
+        var newItem = inputField.value
         //createnew li element
         var li = document.createElement('li')
         //add classname
@@ -78,12 +84,15 @@ filter.addEventListener('keyup', filterItems)
         //create del btn element
         var deleteBtn = document.createElement('button')
         deleteBtn.className = "btn btn-danger btn-sm float-right delete"
-        //sppend textnode
+        //append textnode
         deleteBtn.appendChild(document.createTextNode('X'))
         //append btn to li
         li.appendChild(deleteBtn)
         //append li to list
         itemList.appendChild(li)
+        // reset field
+        inputField.value = ''
+
     }
 
 //removeitem
@@ -147,7 +156,7 @@ filter.addEventListener('keyup', filterItems)
         })
 
         
-        //return notFound.innerHTML = '<h2>Items</h2>'
+    //     //return notFound.innerHTML = '<h2>Items</h2>'
 
     }
 

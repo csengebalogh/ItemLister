@@ -30,6 +30,7 @@
       <form id="addForm" class="form-inline mb-3">
         <input type="text" class="form-control mr-2" id="item">
         <input type="submit" class="btn btn-dark" value="Submit">
+        
       </form>
       <h2 id="itemsTitle" class="title">Items</h2>
       <ul id="items" class="list-group">
@@ -43,17 +44,23 @@
         <h2>hello</h2>
       </div>
       <br>
-      <button class="btn btn-dark btn-block" id="button">Click here to get source code of this page</button>
+      <button class="btn btn-dark btn-block" id="button">Hover on the box below to change the background color</button>
       <br>
       <div id="box" style="width: 255px; height: 255px;
      background: #f4f4d4;">
-          <h3>HELLO!</h3>
+      </div>
+      <div class="alert alert-primary" role="alert">
+        This is not a final version of the project.
       </div>
     </div>
   </div>
 
 
-  <script src="dom.js"></script>
+  <script type="module" src="dom.js"></script>
+  <!-- <script type="module" src="./modules/runEvent.js"></script>
+  <script type="module" src="./modules/removeItem.js"></script>
+  <script type="module" src="./modules/addItem.js"></script>
+  <script type="module" src="./modules/filterItems.js"></script> -->
 </body>
 
 </html>
